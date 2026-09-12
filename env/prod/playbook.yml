@@ -1,0 +1,14 @@
+---
+- name: Test Ansible Deployment
+  hosts: all
+
+  tasks:
+
+    - name: Create test file
+      file:
+        path: /tmp/ansible-demo.txt
+        state: touch
+
+    - name: Show environment
+      debug:
+        msg: "Deployment environment is {{ environment }}"
